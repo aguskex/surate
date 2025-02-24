@@ -397,4 +397,7 @@ img {
     .btn-comprar {
         font-size: 14px;
     }
+    .navbar-links {
+        display: none;
+    }
 }
