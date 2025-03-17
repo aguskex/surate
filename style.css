@@ -48,6 +48,14 @@ body {
     font-style: normal;
 }
 
+video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que el video cubra todo el espacio */
+    border-radius: 10px;
+    background-color: transparent; /* Evita fondos no deseados */
+}
+
 .navbar-logo {
     display: flex;
     align-items: center;
@@ -112,20 +120,74 @@ body {
     display: block;
 }
 
+.inicio-img video{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+}
+
 .inicio-txt {
-    text-align: left;
+    position: relative;
+    padding: 40px;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(141, 181, 128, 0.8); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    border: 1px solid rgba(223, 211, 165, 0.3); /* Borde sutil */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.inicio-txt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(223, 211, 165, 0.2), rgba(141, 181, 128, 0.2)); /* Degradado sutil */
+    z-index: -1;
 }
 
 .inicio-txt h1 {
-    font-size: 48px;
-    color: #4d5848;
-    margin-bottom: 10px;
+    font-family: "Monomakh", serif;
+    font-weight: 400;
+    font-style: normal;
+    justify-content: space-between;
+    align-items: center;
+    color: #DFD3A5;
 }
 
 .inicio-txt p {
-    font-size: 24px;
-    color: #90af81;
-    line-height: 1.5;
+    font-size: 1.25rem;
+    color: #ffffff; /* Texto blanco para contraste */
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+}
+
+.inicio-txt:hover {
+    transform: scale(1.02); /* Escalar ligeramente al pasar el mouse */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.inicio-txt {
+    animation: slideIn 1s ease-out; /* Animación de entrada */
 }
 
 footer {
@@ -332,18 +394,39 @@ img {
 
 #carouselMates {
     width: 100%;
-    max-width: 400px;
+    max-width: 230px; /* Ajusta según sea necesario */
+    height: auto;
     margin: 0 auto;
     border-radius: 10px;
     overflow: hidden;
-  }
-  
-.carousel-inner img {
-    width: 100%;
-    height: 400px;
-    object-fit: contain;
-    background-color: #e0edc5;
 }
+
+.carousel-inner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative;
+    display: none;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item video {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Asegura que el video cubra todo el espacio */
+    border-radius: 10px;
+    background-color: transparent; /* Evita fondos no deseados */
+    pointer-events: none; /* Desactiva los eventos del mouse */
+}
+
 .carousel-indicators button {
     background-color: #DFD3A5;
 }
@@ -557,4 +640,244 @@ img {
     .tipo-mate {
         margin-bottom: 20px;
     }
+}
+/* Estilos para el tema oscuro */
+body.dark {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark .navbar {
+    background-color: #333;
+}
+
+.dark .navbar-links a {
+    color: #ffffff;
+}
+
+.dark .navbar-links a:hover {
+    color: #8DB580;
+}
+
+.dark .inicio-txt {
+    background: rgba(51, 51, 51, 0.8);
+    color: #ffffff;
+}
+
+.dark .mates {
+    background-color: #333;
+    color: #ffffff;
+}
+
+.dark .mates h1 {
+    color: #ffffff;
+}
+
+.dark .mates h1:nth-of-type(2) {
+    color: #8DB580;
+}
+
+.dark .btn-comprar {
+    background-color: #8DB580;
+    color: #ffffff;
+}
+
+.dark .btn-comprar:hover {
+    background-color: #6c9970;
+}
+
+.dark footer {
+    background-color: #333 !important;
+    color: #ffffff;
+}
+
+.dark footer a {
+    color: #ffffff;
+}
+
+.dark footer a:hover {
+    color: #8DB580;
+}
+
+.dark .info {
+    background-color: #1a1a1a;
+}
+
+.dark .info h1 {
+    color: #ffffff;
+}
+
+.dark .info .mapa {
+    background-color: #333;
+    border: 2px solid #8B7355;
+}
+
+.dark .info .mapa h2 {
+    color: #ffffff;
+}
+
+.dark .instructivo {
+    background-color: #1a1a1a;
+}
+
+.dark .instructivo h1 {
+    color: #ffffff;
+}
+
+.dark .tipo-mate {
+    background-color: #333;
+    border: 2px solid #8B7355;
+}
+
+.dark .tipo-mate h2 {
+    color: #ffffff;
+}
+
+.dark .tipo-mate p {
+    color: #ffffff;
+}
+#theme-selector {
+    background-color: #8DB580;
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: inherit; /* Hereda el color del texto del tema actual */
+    padding: 0;
+    margin: 0;
+}
+
+.theme-toggle-btn:hover {
+    opacity: 0.8;
+}
+
+
+.dark #theme-selector {
+    background-color: #333;
+    color: #ffffff;
+}
+body.dark .carousel-item video {
+    background-color: transparent; /* Asegúrate de que los videos no tengan fondos no deseados */
+}
+
+body.dark .carousel-inner {
+    background-color: transparent; /* Asegúrate de que el carrusel no tenga fondos no deseados */
+}
+
+.dark #btn-volver-arriba {
+    background-color: #333;
+}
+
+/* Estilos generales para el modo oscuro */
+body.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-theme .navbar {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-theme .navbar-links a {
+    color: #ffffff;
+}
+
+body.dark-theme .navbar-links a:hover {
+    color: #8DB580;
+}
+
+body.dark-theme .inicio-txt {
+    background: rgba(51, 51, 51, 0.8);
+    color: #ffffff;
+}
+
+body.dark-theme .mates {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-theme .mates h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .mates h1:nth-of-type(2) {
+    color: #8DB580;
+}
+
+body.dark-theme .btn-comprar {
+    background-color: #8DB580;
+    color: #ffffff;
+}
+
+body.dark-theme .btn-comprar:hover {
+    background-color: #6c9970;
+}
+
+body.dark-theme footer {
+    background-color: #1f1f1f !important;
+    color: #ffffff;
+}
+
+body.dark-theme footer a {
+    color: #ffffff;
+}
+
+body.dark-theme footer a:hover {
+    color: #8DB580;
+}
+
+body.dark-theme .info {
+    background-color: #121212;
+}
+
+body.dark-theme .info h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .info .mapa {
+    background-color: #333;
+    border: 2px solid #8B7355;
+}
+
+body.dark-theme .info .mapa h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .instructivo {
+    background-color: #121212;
+}
+
+body.dark-theme .instructivo h1 {
+    color: #ffffff;
+}
+
+body.dark-theme .tipo-mate {
+    background-color: #333;
+    border: 2px solid #8B7355;
+}
+
+body.dark-theme .tipo-mate h2 {
+    color: #ffffff;
+}
+
+body.dark-theme .tipo-mate p {
+    color: #ffffff;
+}
+
+body.dark-theme #btn-volver-arriba {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-theme .whatsapp-button {
+    background-color: #25d366;
 }
