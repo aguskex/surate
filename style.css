@@ -68,11 +68,6 @@ video {
     margin-right: 10px;
 }
 
-.navbar-logo h1 {
-    font-size: 24px;
-    margin: 0;
-}
-
 .navbar-links {
     list-style: none;
     display: flex;
@@ -880,4 +875,45 @@ body.dark-theme #btn-volver-arriba {
 
 body.dark-theme .whatsapp-button {
     background-color: #25d366;
+}
+
+/* Estilos para el título en la barra de navegación */
+.navbar-logo h1 {
+    font-size: 28px; /* Tamaño más grande */
+    margin: 0;
+    color: #DFD3A5; /* Color base del texto */
+    position: relative; /* Para el borde animado */
+    font-weight: bold; /* Texto en negrita */
+    letter-spacing: 1.5px; /* Espaciado más moderno */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    animation: glow 2s infinite alternate; /* Animación de sombra dinámica */
+}
+
+/* Borde animado */
+.navbar-logo h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Posición del borde */
+    width: 100%;
+    height: 2px; /* Grosor del borde */
+    background: linear-gradient(90deg, #DFD3A5, #8DB580); /* Gradiente para el borde */
+    transform: scaleX(0); /* Inicialmente oculto */
+    transform-origin: left;
+    transition: transform 0.5s ease; /* Animación suave */
+}
+
+/* Efecto hover en el título */
+.navbar-logo h1:hover::after {
+    transform: scaleX(1); /* Mostrar el borde al hacer hover */
+}
+
+/* Animación de sombra dinámica */
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    to {
+        text-shadow: 2px 2px 8px rgba(223, 211, 165, 0.6), 0 0 12px rgba(141, 181, 128, 0.6);
+    }
 }
