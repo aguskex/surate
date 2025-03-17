@@ -23,40 +23,41 @@
             <li><a href="#inicio">INICIO</a></li>
             <li><a href="#productos">PRODUCTOS</a></li>
             <li><a href="#info">INFO</a></li>
+            <li>
+                <!-- Botón con ícono para cambiar el tema -->
+                <button class="theme-toggle-btn">
+                    <i class="bi bi-moon-stars"></i> <!-- Ícono de luna (tema oscuro) -->
+                </button>
+            </li>
         </ul>
     </nav>
     <section id="inicio" class="inicio">
         <div id="carouselMates" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="img/termo.png" class="d-block w-100" alt="Mate 1">
-              </div>
-              <div class="carousel-item">
-                <img src="img/camionero-algarrobo.png" class="d-block w-100" alt="Camionero algarrobo">
-              </div>
-              <div class="carousel-item">
-                <img src="img/camionero-bocaancha.png" class="d-block w-100" alt="Camionero boca ancha">
-              </div>
-              <div class="carousel-item">
-                <img src="img/camionero-virolaacero.png" class="d-block w-100" alt="Camionero virola de acero">
-              </div>
-              <div class="carousel-item">
-                <img src="img/mate0.png" class="d-block w-100" alt="Mate 3">
-              </div>
+                <div class="carousel-item active">
+                    <video class="d-block w-100" autoplay muted>
+                        <source src="img/termo.mov" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class="d-block w-100" autoplay muted>
+                        <source src="img/fernet.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+                <div class="carousel-item">
+                    <video class="d-block w-100" autoplay muted>
+                        <source src="img/promo.mp4" type="video/mp4">
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselMates" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselMates" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Siguiente</span>
-            </button>
-          </div>
+        </div>
     
         <div class="inicio-txt" data-aos="fade-left" data-aos-duration="1000">
-            <h1>El ritual empieza con el mate perfecto!</h1>
-            <p>Mates, termos y cualquier accesorio para tus mates.</p>
+            <h1>Surate Mates</h1>
+            <p>Donde la tradición se encuentra con la calidad. ¡Tu mate perfecto está acá!</p>
         </div>
     </section>
     
@@ -97,7 +98,7 @@
                 <img src="img/termo.png" alt="Termo 1lt">
             </div>
             <h1>TERMOS</h1>
-            <h1>Proximamente</h1>
+            <h1>$17.999</h1>
             <a href="https://wa.me/+543512174433?text=¡Hola! Estoy interesado/a en TERMOS. ¿Podrías darme más información?" target="_blank">
                 <button class="btn-comprar">Comprar</button>
             </a>
@@ -280,13 +281,12 @@
     target="_blank">
     <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
     </a>
-
     <script src="index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+    
 </body>
 </html>
