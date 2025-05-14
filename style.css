@@ -36,9 +36,10 @@ body {
 
 .navbar {
     display: flex;
+    position: sticky;
     justify-content: space-between;
     align-items: center;
-    background-color: #8DB580;
+    background-color: #6b8e23;
     padding: 7px 20px;
     padding-right: 50px;
     padding-left: 30px;
@@ -46,14 +47,15 @@ body {
     font-family: "Monomakh", serif;
     font-weight: 400;
     font-style: normal;
+    transition: all 0.3s ease;
 }
 
 video {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Asegura que el video cubra todo el espacio */
+    object-fit: cover;
     border-radius: 10px;
-    background-color: transparent; /* Evita fondos no deseados */
+    background-color: transparent;
 }
 
 .navbar-logo {
@@ -66,6 +68,18 @@ video {
     width: 100px;
     height: 100px;
     margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover img {
+    transform: rotate(15deg);
+}
+
+.navbar-logo h1 {
+    font-size: 28px;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    margin: 0;
 }
 
 .navbar-links {
@@ -73,6 +87,7 @@ video {
     display: flex;
     margin: 0;
     padding: 0;
+    gap: 25px;
 }
 
 .navbar-links li {
@@ -81,16 +96,34 @@ video {
 
 .navbar-links a {
     text-decoration: none;
-    color: #DFD3A5;
+    color: white;
     font-size: 18px;
     transition: color 0.5s ease;
     font-family: "Rowdies", serif;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .navbar-links a:hover {
-    color: #ffffff;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
 }
 
 .inicio {
@@ -130,10 +163,10 @@ video {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-    background: rgba(141, 181, 128, 0.8); /* Fondo semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque */
-    border: 1px solid rgba(223, 211, 165, 0.3); /* Borde sutil */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background: #6b8e23;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(223, 211, 165, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
 .inicio-txt::before {
@@ -143,7 +176,7 @@ video {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(223, 211, 165, 0.2), rgba(141, 181, 128, 0.2)); /* Degradado sutil */
+    background: linear-gradient(135deg, rgba(223, 211, 165, 0.2), rgba(141, 181, 128, 0.2));
     z-index: -1;
 }
 
@@ -158,15 +191,15 @@ video {
 
 .inicio-txt p {
     font-size: 1.25rem;
-    color: #ffffff; /* Texto blanco para contraste */
+    color: #ffffff;
     line-height: 1.6;
     margin-bottom: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra de texto */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .inicio-txt:hover {
-    transform: scale(1.02); /* Escalar ligeramente al pasar el mouse */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -182,11 +215,11 @@ video {
 }
 
 .inicio-txt {
-    animation: slideIn 1s ease-out; /* Animación de entrada */
+    animation: slideIn 1s ease-out;
 }
 
 footer {
-    background-color: #8DB580 !important;
+    background-color: #6b8e23 !important;
     color: #DFD3A5;
 }
 
@@ -389,7 +422,7 @@ img {
 
 #carouselMates {
     width: 100%;
-    max-width: 230px; /* Ajusta según sea necesario */
+    max-width: 230px;
     height: auto;
     margin: 0 auto;
     border-radius: 10px;
@@ -416,10 +449,10 @@ img {
 .carousel-item video {
     width: 100%;
     height: auto;
-    object-fit: cover; /* Asegura que el video cubra todo el espacio */
+    object-fit: cover;
     border-radius: 10px;
-    background-color: transparent; /* Evita fondos no deseados */
-    pointer-events: none; /* Desactiva los eventos del mouse */
+    background-color: transparent;
+    pointer-events: none;
 }
 
 .carousel-indicators button {
@@ -636,7 +669,7 @@ img {
         margin-bottom: 20px;
     }
 }
-/* Estilos para el tema oscuro */
+
 body.dark {
     background-color: #1a1a1a;
     color: #ffffff;
@@ -745,7 +778,7 @@ body.dark {
     border: none;
     cursor: pointer;
     font-size: 1.5rem;
-    color: inherit; /* Hereda el color del texto del tema actual */
+    color: inherit;
     padding: 0;
     margin: 0;
 }
@@ -760,18 +793,18 @@ body.dark {
     color: #ffffff;
 }
 body.dark .carousel-item video {
-    background-color: transparent; /* Asegúrate de que los videos no tengan fondos no deseados */
+    background-color: transparent;
 }
 
 body.dark .carousel-inner {
-    background-color: transparent; /* Asegúrate de que el carrusel no tenga fondos no deseados */
+    background-color: transparent;
 }
 
 .dark #btn-volver-arriba {
     background-color: #333;
 }
 
-/* Estilos generales para el modo oscuro */
+
 body.dark-theme {
     background-color: #121212;
     color: #ffffff;
@@ -877,38 +910,34 @@ body.dark-theme .whatsapp-button {
     background-color: #25d366;
 }
 
-/* Estilos para el título en la barra de navegación */
 .navbar-logo h1 {
-    font-size: 28px; /* Tamaño más grande */
+    font-size: 28px;
     margin: 0;
-    color: #DFD3A5; /* Color base del texto */
-    position: relative; /* Para el borde animado */
-    font-weight: bold; /* Texto en negrita */
-    letter-spacing: 1.5px; /* Espaciado más moderno */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Sombra suave */
-    animation: glow 2s infinite alternate; /* Animación de sombra dinámica */
+    color: #DFD3A5;
+    position: relative;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: glow 2s infinite alternate;
 }
 
-/* Borde animado */
 .navbar-logo h1::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -5px; /* Posición del borde */
+    bottom: -5px;
     width: 100%;
-    height: 2px; /* Grosor del borde */
-    background: linear-gradient(90deg, #DFD3A5, #8DB580); /* Gradiente para el borde */
-    transform: scaleX(0); /* Inicialmente oculto */
+    height: 2px;
+    background: linear-gradient(90deg, #DFD3A5, #8DB580);
+    transform: scaleX(0);
     transform-origin: left;
-    transition: transform 0.5s ease; /* Animación suave */
+    transition: transform 0.5s ease;
 }
 
-/* Efecto hover en el título */
 .navbar-logo h1:hover::after {
-    transform: scaleX(1); /* Mostrar el borde al hacer hover */
+    transform: scaleX(1); 
 }
 
-/* Animación de sombra dinámica */
 @keyframes glow {
     from {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
