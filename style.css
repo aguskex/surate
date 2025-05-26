@@ -36,7 +36,7 @@ body {
 
 .navbar {
     display: flex;
-    position: sticky;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     background-color: #6b8e23;
@@ -945,4 +945,49 @@ body.dark-theme .whatsapp-button {
     to {
         text-shadow: 2px 2px 8px rgba(223, 211, 165, 0.6), 0 0 12px rgba(141, 181, 128, 0.6);
     }
+}
+
+.catalogo {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.categoria-productos {
+    margin-bottom: 50px;
+}
+
+.titulo-categoria {
+    font-size: 2rem;
+    color: #4d5848;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.titulo-categoria::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background-color: #8DB580;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para el tema oscuro */
+body.dark .titulo-categoria {
+    color: #DFD3A5;
+}
+
+body.dark .titulo-categoria::after {
+    background-color: #6b8e23;
 }
